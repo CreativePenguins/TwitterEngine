@@ -1,5 +1,7 @@
 #include <iostream>
-#include "mention.h"
+#include "mention.hpp"
+#include "topic.hpp"
+#include "url.hpp"
 
 int main()
 {
