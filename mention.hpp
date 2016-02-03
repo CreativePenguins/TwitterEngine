@@ -1,5 +1,5 @@
 #include <string.h>
-#ifndef mention_h
+#ifndef mention_hpp
 #define mention_h
 
 /*******************************************************************************
@@ -17,12 +17,12 @@ private:
 public:
     //constructor
     Mention();
-    Mention(char at, std::string n);
+    Mention(std::string n);
     
     //accessors and mutators
     void set_name(std::string n); // Function to set the mention
     void get_name();              // Fucntion to return mention w/o at sign
-    void find_mention();
+    void find_mention();          // Fucntion to find a mention within a tweet
     
 };
 
