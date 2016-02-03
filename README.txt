@@ -13,7 +13,7 @@ my coworkers, but I should be able to start doing daily commits now and leading
 up to the next class on Feb 4. I don't have any concerns about finishing this,
 just wanted to let George know the situation.
 
-For now this code will just take one tween at a time, it can be later expanded
+For now this code will just take one tweet at a time, it can be later expanded
 into being able to read from file and mark all tweets with different properties.
 
 ********************************************************************************
