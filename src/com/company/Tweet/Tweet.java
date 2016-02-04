@@ -14,11 +14,15 @@ public class Tweet {
 
     private String message;
 
-    public void set_messsage(String m) {
+    public Tweet(String m) {
+        setMessage(m);
+    }
+
+    public void setMessage(String m) {
         this.message = m;
     }
 
-    public String get_message() {
+    public String getMessage() {
         return message;
     }
 

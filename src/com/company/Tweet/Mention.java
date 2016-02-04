@@ -22,7 +22,7 @@ public class Mention extends Tweet {
     }
 
     public void findMentions() {
-        String t = get_message();
+        String t = getMessage();
         int i = 0;
         int x;
         while (i < t.length()) {
