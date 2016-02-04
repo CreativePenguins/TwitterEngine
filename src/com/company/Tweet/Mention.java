@@ -1,6 +1,5 @@
 package com.company.Tweet;
 
-import javax.swing.*;
 import java.util.List;
 
 /**
@@ -22,8 +21,7 @@ public class Mention extends Tweet {
         }
     }
 
-    public void findMention() {
-
+    public void findMentions() {
         String t = get_message();
         int i = 0;
         int x;
