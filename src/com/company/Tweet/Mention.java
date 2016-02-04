@@ -12,15 +12,15 @@ public class Mention extends Tweet {
     // Need, set, get, find.
 
     // I would like this to eventually be an array in case of more than one mention.
-    public void set_mention(String m) {
+    public void setMention(String m) {
         this.mention = m;
     }
 
-    public String get_mention() {
+    public String getMention() {
         return mention;
     }
 
-    public void find_mention() {
+    public void findMention() {
         return;
     }
 
