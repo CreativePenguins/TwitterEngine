@@ -14,6 +14,8 @@ public class Tweet {
 
     private String message;
 
+    public Tweet(){}
+
     public Tweet(String m) {
         setMessage(m);
     }

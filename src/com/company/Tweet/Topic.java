@@ -10,8 +10,17 @@ public class Topic extends Tweet{
     // The goal of this class is to be able to find and list the topics in a tweet.
 
     private List topics;
+    private String sTopic;
 
     // Need, set, get, find.
+
+    public Topic(String m) {
+        addTopic(m);
+    }
+
+    public void addTopic(String t) {
+        topics.add(t);
+    }
 
     public void displayTopics() {
         int i = 0;
