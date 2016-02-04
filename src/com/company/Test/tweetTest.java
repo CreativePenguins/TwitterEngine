@@ -19,4 +19,19 @@ public class tweetTest {
         assertEquals(tweet.getMessage(), tyler);
     }
 
+    @Test
+    public void testMention() {
+        return;
+    }
+
+    @Test
+    public void testTopic() {
+        return;
+    }
+
+    @Test
+    public void testURL() {
+        return;
+    }
+
 }
