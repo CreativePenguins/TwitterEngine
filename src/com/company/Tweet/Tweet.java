@@ -10,14 +10,16 @@ public class Tweet {
      * markers such as @, #, and http://, and identify until white space is reached.
      */
 
-    // Below are the things needed for tweets, the three main things.
-    private String mention;
-    private String topic;
-    private String url;
+    // In just this class we will just have the message.
 
-    public Tweet() {
+    private String message;
+
+    public void set_messsage(String m) {
+        this.message = m;
     }
 
-    // Below are the functions I'm going to need.
+    public String get_message() {
+        return message;
+    }
 
 }
