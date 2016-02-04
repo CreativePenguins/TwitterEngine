@@ -14,6 +14,7 @@ public class Topic extends Tweet{
 
     // Need, set, get, find.
 
+    public Topic(){}
     public Topic(String m) {
         addTopic(m);
     }
@@ -25,22 +26,25 @@ public class Topic extends Tweet{
     public void displayTopics() {
         int i = 0;
         while (i < topics.size()){
-            System.out.print(topics.get(i));
+            System.out.print(topics.get(i).toString());
             i++;
         }
     }
 
-    public void findTopics() {
-        String t = getMessage();
+    public Object displayTopicNum(int i) {
+        return topics.get(i);
+    }
+
+    public void findTopics(String tweet) {
         int i = 0;
         int x;
-        while (i < t.length()) {
-            if (t.charAt(i) == '#') {
+        while (i < tweet.length()) {
+            if (tweet.charAt(i) == '#') {
                 x = i;
-                while (t.charAt(x) != ' '){
+                while (tweet.charAt(x) != ' '){
                     x++;
                 }
-                topics.add(t.substring(i+1,x));
+                topics.add(tweet.substring(i+1,x));
                 i = x+1;
             } i++;
         } return;
