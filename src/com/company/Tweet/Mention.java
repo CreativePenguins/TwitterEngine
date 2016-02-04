@@ -10,15 +10,9 @@ public class Mention extends Tweet {
 
     // This class will just contain the necessary steps for the mention using the @symbol.
 
-    private String mention;
     private List mentions;
 
     // Need, set, get, find.
-
-    // I would like this to eventually be an array in case of more than one mention.
-    public void setMention(String m) {
-        mentions.add(m);
-    }
 
     public void displayMentions() {
         int i = 0;
@@ -30,9 +24,19 @@ public class Mention extends Tweet {
 
     public void findMention() {
 
-
-
-        return;
+        String t = get_message();
+        int i = 0;
+        int x;
+        while (i < t.length()) {
+            if (t.charAt(i) == '@') {
+                x = i;
+                while (t.charAt(x) != ' '){
+                    x++;
+                }
+                mentions.add(t.substring(i+1,x));
+                i = x+1;
+            } i++;
+        } return;
     }
 
 }
