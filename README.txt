@@ -1,4 +1,4 @@
-This is the README for the first assignment for COMP 330 - Software Engineering.
+This is the README for the first assignment for COMP 328 - Software Engineering.
 ********************************************************************************
 
 The goal of this assignment was to create an engine that can read and interpret,
