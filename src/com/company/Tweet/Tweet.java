@@ -32,11 +32,6 @@ public class Tweet {
         return message;
     }
 
-    public void displayMentions() {
-        for (int i = 0; i < mentions.size(); ++i)
-            System.out.print(mentions.get(i));
-    }
-
     public String displayMentionNum(int i) {
         return mentions.get(i);
     }
@@ -50,9 +45,8 @@ public class Tweet {
         }
     }
 
-    public void displayTopics() {
-        for (int i = 0; i < topics.size(); ++i)
-            System.out.print(topics.get(i).toString());
+    public boolean mentionsEmpty() {
+        return mentions.isEmpty();
     }
 
     public String displayTopicNum(int i) {
@@ -68,6 +62,10 @@ public class Tweet {
         }
     }
 
+    public boolean topicsEmpty() {
+        return topics.isEmpty();
+    }
+
     public void findURL() {
         String regex = "\\(?\\b(http://|www[.])[-A-Za-z0-9+&amp;@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&amp;@#/%=~_()|]";
         Pattern p = Pattern.compile(regex);
@@ -81,5 +79,8 @@ public class Tweet {
         return urls.get(i);
     }
 
+    public boolean urlEmpty() {
+        return urls.isEmpty();
+    }
 
 }
