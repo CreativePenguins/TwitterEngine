@@ -15,9 +15,8 @@ public class Tweet {
      */
 
     // In just this class we will just have the message.
-
     private String message;
-    protected List<String> mentions = new ArrayList<>();
+    private List<String> mentions = new ArrayList<>();
     private List<String> topics = new ArrayList<>();
     private List<String> urls = new ArrayList<>();
 
@@ -56,27 +55,30 @@ public class Tweet {
             System.out.print(topics.get(i).toString());
     }
 
+    public String displayTopicNum(int i) {
+        return topics.get(i);
+    }
+
     public void findTopics() {
-        int i = 0;
-        int x;
-        while (i<message.length()) {
-            if (message.charAt(i) == '#') {
-                x = i;
-                while (message.charAt(x) != ' ') {
-                    x++;
-                } topics.add(message.substring(i+1,x));
-                i = x+1;
-            }i++;
-        }return;
+        String regex = "[#]+([A-Za-z]+[A-Za-z0-9-_]*)";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(message);
+        while (m.find()) {
+            topics.add(m.group());
+        }
     }
 
     public void findURL() {
-
+        String regex = "\\(?\\b(http://|www[.])[-A-Za-z0-9+&amp;@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&amp;@#/%=~_()|]";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(message);
+        while (m.find()) {
+            urls.add(m.group());
+        }
     }
 
-    public void displayURLs() {
-        for (int i = 0; i < urls.size(); ++i)
-            System.out.print(urls.get(i).toString());
+    public String displayUrlNum(int i) {
+        return urls.get(i);
     }
 
 

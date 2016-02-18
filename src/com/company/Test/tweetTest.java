@@ -3,7 +3,7 @@ package com.company.Test;
 import com.company.Tweet.*;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 
 /**
@@ -11,17 +11,17 @@ import static org.junit.Assert.assertEquals;
  */
 public class tweetTest {
 
-    Tweet tweet = new Tweet("@Tyler is a #real person");
+    Tweet tweet = new Tweet("@Tyler is a #real person http://www.google.com/");
 
     @Test
     public void testTweet() {
-        String tyler = "@Tyler is a #real person";
+        String tyler = "@Tyler is a #real person http://www.google.com/";
 
         assertEquals(tweet.getMessage(), tyler);
-        assertEquals(tweet.getMessage().length(), 24);
+        assertEquals(tweet.getMessage().length(), 47);
         assertEquals(tweet.getMessage().charAt(0),'@');
         assertEquals(tweet.getMessage().charAt(23),'n');
-        assertEquals(tweet.getMessage(), "@Tyler is a #real person");
+        assertTrue(tweet.getMessage().length() <= 140);
     }
 
     @Test
@@ -30,10 +30,16 @@ public class tweetTest {
         assertEquals(tweet.displayMentionNum(0),"@Tyler");
     }
 
+    @Test
+    public void testTopic() {
+        tweet.findTopics();
+        assertEquals(tweet.displayTopicNum(0),"#real");
+    }
 
     @Test
     public void testURL() {
-        return;
+        tweet.findURL();
+        assertEquals(tweet.displayUrlNum(0), "http://www.google.com/");
     }
 
 }
