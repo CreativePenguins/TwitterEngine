@@ -1,7 +1,8 @@
 package com.company.Tweet;
 
-import java.util.List;
+
 import java.util.regex.*;
+import java.util.*;
 
 /**
  * Created by Tyler on 2/3/16.
@@ -16,12 +17,12 @@ public class Tweet {
     // In just this class we will just have the message.
 
     private String message;
-    private List mentions;
-    private List topics;
-    private List urls;
+    protected List<String> mentions = new ArrayList<>();
+    private List<String> topics = new ArrayList<>();
+    private List<String> urls = new ArrayList<>();
 
-    public Tweet(String m) {
-        setMessage(m);
+    public Tweet(String message) {
+        setMessage(message);
     }
 
     public void setMessage(String m) {
@@ -37,25 +38,17 @@ public class Tweet {
             System.out.print(mentions.get(i));
     }
 
-    public void findMentions() {
-        int i = 0;
-        int x;
-        while (i < message.length()) {
-            if (message.charAt(i) == '@') {
-                x = i;
-                while (message.charAt(x) != ' ') {
-                    x++;
-                }
-                mentions.add(message.substring(i + 1, x));
-                i = x + 1;
-            }
-            i++;
-        }
-        return;
+    public String displayMentionNum(int i) {
+        return mentions.get(i);
     }
 
-    public void addTopic(String t) {
-        topics.add(t);
+    public void findMentions() {
+        String regex = "[@]+([A-Za-z0-9\\S]+)";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(message);
+        while (m.find()) {
+            mentions.add(m.group());
+        }
     }
 
     public void displayTopics() {
@@ -75,6 +68,15 @@ public class Tweet {
                 i = x+1;
             }i++;
         }return;
+    }
+
+    public void findURL() {
+
+    }
+
+    public void displayURLs() {
+        for (int i = 0; i < urls.size(); ++i)
+            System.out.print(urls.get(i).toString());
     }
 
 
